@@ -25,6 +25,6 @@ public class DetalleVenta {
     @JoinColumn(name="producto_id")
     private Producto prod;
     private Integer cantProd;
-    private Double precio; // precio al momento de la venta-- para q no dependa del cambio de precios de prodcutos
+    private Double precio; // precio SubtotalCalculado
 
 }

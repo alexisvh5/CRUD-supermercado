@@ -69,6 +69,9 @@ vent.setTotal(ventaDto.getTotal());
             //busco producto por id
             Producto p = productoRepository.findById(detDTO.getIdProducto()).orElse(null);
             if (p==null){throw new RuntimeException("producto no encntorado "+ detDTO.getNombreProd());}
+            if (p.getCantidad() < detDTO.getCantProd()){throw new RuntimeException("no hay stock para este producto: "+ detDTO.getNombreProd());}
+            //descuento la cantidad que fue aceptada al stock
+            p.setCantidad(p.getCantidad()-detDTO.getCantProd());
             //creo detalle
             DetalleVenta detalleVent = new DetalleVenta();
             detalleVent.setProd(p);
