@@ -111,7 +111,7 @@ mvn spring-boot:run
 * Unit and integration testing
 * Pagination and filtering
 * Cloud deployment
-* Stock control
+* Stock shortage alert
 
 ---
 
